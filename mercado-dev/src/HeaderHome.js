@@ -1,5 +1,5 @@
-import React from 'react';
-import logo from './logo.png';
+import React from 'react'
+import logo from './logo.png'
 
 // functional stateless component
 const HeaderHome = (props) => {
@@ -13,4 +13,4 @@ const HeaderHome = (props) => {
   );
 }
 
-export default HeaderHome;
+export default HeaderHome

@@ -1,4 +1,4 @@
-import React from  'react';
+import React from  'react'
 
 const AnuncioHome = (props) => {
   return (
@@ -17,4 +17,4 @@ const AnuncioHome = (props) => {
   );
 }
 
-export default AnuncioHome;
+export default AnuncioHome

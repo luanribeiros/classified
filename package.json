@@ -5,5 +5,8 @@
   "repository": "git@github.com:luanribeiros/classified.git",
   "author": "Luan Ribeiro <luanribeiros@gmail.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "create-react-app": "^1.5.2"
+  }
 }

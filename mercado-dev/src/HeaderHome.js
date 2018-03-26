@@ -10,7 +10,7 @@ const HeaderHome = (props) => {
         <p className="text-center"><a className="btn btn-anuncie btn-lg" to="/novo-anuncio" role="button">Anuncie Grátis &raquo;</a></p>
       </div>
     </div>
-  )
+  );
 }
 
 export default HeaderHome;

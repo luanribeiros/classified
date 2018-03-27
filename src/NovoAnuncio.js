@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import HeaderInterno from './HeaderInterno'
 
 class NovoAnuncio extends Component {
   render() {
     return (
       <div>
+        <HeaderInterno />
         <div className='container' style={{ paddingTop: '120px'}}>
-          <h1></h1>
+          <h1>Novo Anúncio</h1>
           <form onSubmit={null}>
             <div className='form-group'>
               <label htmlFor='nome'>Nome</label>

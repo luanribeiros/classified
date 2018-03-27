@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import base from './base'
 import AnuncioHome from './AnuncioHome'
 import LinkCategoria from './LinkCategoria'
+import base from './base'
 
 class Home extends Component {
   constructor(props) {

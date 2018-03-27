@@ -32,8 +32,9 @@ class Home extends Component {
         <div className="container">
             <h3> Últimos Anúncios </h3>
             <div className="row">
-            { this.state.anuncios.map( (anuncio, indice) => {
-              return <AnuncioHome key={indice} anuncio={anuncio} />
+            { Object.keys(this.state.anuncios).map( key => {
+              const anuncio = this.state.anuncios[key];
+              return <AnuncioHome key={key} anuncio={anuncio} />
             })}
             </div>
             <h3> Categorias </h3>

@@ -6,3 +6,12 @@ const config = {
   storageBucket: "",
   messagingSenderId: "797108387050"
 };
+
+const Rebase = require('re-base')
+const firebase = require('firebase/app')
+require('firebase/database')
+
+const app = firebase.initializeApp(config)
+const base = Rebase.createClass(app.database())
+
+export default base

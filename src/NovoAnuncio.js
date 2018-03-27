@@ -21,7 +21,8 @@ class NovoAnuncio extends Component {
           preco: this.preco.value,
           telefone: this.telefone.value,
           vendedor: this.vendedor.value,
-          foto: img.metadata.downloadURLs[0]
+          foto: img.metadata.downloadURLs[0],
+          categorias: this.categoria.value
         };
         base.push('anuncios', {
           data: novoAnuncio
@@ -44,32 +45,46 @@ class NovoAnuncio extends Component {
         <HeaderInterno />
         <div className='container' style={{ paddingTop: '120px'}}>
           <h1>Novo Anúncio</h1>
+
           <form onSubmit={this.handleSubmit}>
             <div className='form-group'>
               <label htmlFor='nome'>Foto</label>
               <input type='file' className='form-control' id='foto' placeholder='Foto'
                      ref={ (ref) => this.foto = ref } />
             </div>
+
             <div className='form-group'>
               <label htmlFor='nome'>Nome</label>
-              <input type='text' className='form-control' id='nome' placeholder='Nome'
+              <input type='text' className='form-control' id='categoria' placeholder='Nome'
                      ref={ (ref) => this.nome = ref } />
             </div>
+
+            <div className='form-group'>
+              <label htmlFor='nome'>Categorias </label>
+              <select ref={ (ref) => this.categoria = ref } >
+                      { this.props.categorias
+                      .map( cat => <option value={cat.url}>{cat.categoria}</option>)}
+              </select>
+            </div>
+
             <div className='form-group'>
               <label htmlFor='nome'>Descrição</label>
               <input type='text' className='form-control' id='descricao' placeholder='Descrição'
                      ref={ (ref) => this.descricao = ref } />
             </div>
+
             <div className='form-group'>
               <label htmlFor='nome'>Preço</label>
               <input type='text' className='form-control' id='preco' placeholder='Preço'
                      ref={ (ref) => this.preco = ref } />
             </div>
+
             <div className='form-group'>
               <label htmlFor='nome'>Telefone</label>
               <input type='text' className='form-control' id='telefone' placeholder='Telefone'
                      ref={ (ref) => this.telefone = ref } />
             </div>
+
             <div className='form-group'>
               <label htmlFor='nome'>Vendedor</label>
               <input type='text' className='form-control' id='vendedor' placeholder='Vendedor'
@@ -77,6 +92,7 @@ class NovoAnuncio extends Component {
             </div>
             <button type='submit' className='btn btn-primary'>Salvar Anúncio</button>
           </form>
+
         </div>
       </div>
     )

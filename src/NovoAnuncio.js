@@ -25,19 +25,23 @@ class NovoAnuncio extends Component {
             </div>
             <div className='form-group'>
               <label htmlFor='nome'>Descrição</label>
-              <input type='text' className='form-control' id='descricao' placeholder='Descrição' />
+              <input type='text' className='form-control' id='descricao' placeholder='Descrição'
+                     ref={ (ref) => this.nome = ref } />
             </div>
             <div className='form-group'>
               <label htmlFor='nome'>Preço</label>
-              <input type='text' className='form-control' id='preco' placeholder='Preço' />
+              <input type='text' className='form-control' id='preco' placeholder='Preço'
+                     ref={ (ref) => this.nome = ref } />
             </div>
             <div className='form-group'>
               <label htmlFor='nome'>Telefone</label>
-              <input type='text' className='form-control' id='telefone' placeholder='Telefone' />
+              <input type='text' className='form-control' id='telefone' placeholder='Telefone'
+                     ref={ (ref) => this.nome = ref } />
             </div>
             <div className='form-group'>
               <label htmlFor='nome'>Vendedor</label>
-              <input type='text' className='form-control' id='vendedor' placeholder='Vendedor' />
+              <input type='text' className='form-control' id='vendedor' placeholder='Vendedor'
+                     ref={ (ref) => this.nome = ref } />
             </div>
             <button type='submit' className='btn btn-primary'>Salvar Anúncio</button>
           </form>

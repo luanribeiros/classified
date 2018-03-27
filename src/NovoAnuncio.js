@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import HeaderInterno from './HeaderInterno'
 import base, { storage } from './base'
+import { Redirect } from 'react-router-dom'
 
 class NovoAnuncio extends Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      success: false
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e) {
@@ -26,13 +29,11 @@ class NovoAnuncio extends Component {
         };
         base.push('anuncios', {
           data: novoAnuncio
-        }, (err) => {
-          if(err) {
-
-          }else {
-
-          }
         })
+          .then(() => {
+            console.log('success')
+            this.setState({ success: true })
+          })
       })
     console.log(NovoAnuncio);
     e.preventDefault();
@@ -42,6 +43,7 @@ class NovoAnuncio extends Component {
   render() {
     return (
       <div>
+        { this.state.success && <Redirect to='/' /> }
         <HeaderInterno />
         <div className='container' style={{ paddingTop: '120px'}}>
           <h1>Novo Anúncio</h1>
@@ -60,10 +62,10 @@ class NovoAnuncio extends Component {
             </div>
 
             <div className='form-group'>
-              <label htmlFor='nome'>Categorias </label>
+              <label htmlFor='nome'>Categorias </label><br />
               <select ref={ (ref) => this.categoria = ref } >
                       { this.props.categorias
-                      .map( cat => <option value={cat.url}>{cat.categoria}</option>)}
+                      .map( cat => <option key={cat.url} value={cat.url}>{cat.categoria}</option>)}
               </select>
             </div>
 

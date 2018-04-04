@@ -23,7 +23,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <Route path='/' exact render={() => <Home categorias={this.state.categorias} />} />
-          <Route path='/novo-anuncio' exact render={() => <NovoAnuncio categorias={this.state.categorias} /> } />
+          <Route path='/novo-anuncio' exact render={() => <NovoAnuncio
+                 categorias={this.state.categorias} /> } />
           <Route path='/categorias' render={() => <Categorias />} />
           <Footer />
         </div>

@@ -5,6 +5,7 @@ import Home from './Home'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import NovoAnuncio from './NovoAnuncio'
 import base from './base'
+import Categorias from './Categorias'
 
 class App extends Component {
   constructor(props) {

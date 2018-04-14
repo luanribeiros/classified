@@ -3,6 +3,7 @@ import { Link, Route } from 'react-router-dom'
 
 import HeaderInterno from './HeaderInterno';
 import Categoria from './Categoria'
+import Anuncio from './Anuncio'
 
 const Categorias = (props) => {
   return (
@@ -25,7 +26,8 @@ const Categorias = (props) => {
           </div>
           <div className="col-lg-8">
             <Route path='/categorias/:urlCategoria' exact component={Categoria} />
-            <Route path='/categorias/:urlCategoria/:idAnuncio' render={() => <h1> Anuncio </h1>} />
+            <Route path='/categorias/:urlCategoria/:idAnuncio'
+            render={(props) => <Anuncio {...props} />} />
           </div>
         </div>
       </div>

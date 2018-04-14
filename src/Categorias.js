@@ -24,7 +24,8 @@ const Categorias = (props) => {
             {JSON.stringify(props.categorias)}
           </div>
           <div className="col-lg-8">
-            <Route path='/categorias/:urlCategoria' component={Categoria} />
+            <Route path='/categorias/:urlCategoria' exact component={Categoria} />
+            <Route path='/categorias/:urlCategoria/:idAnuncio' render={() => <h1> Anuncio </h1>} />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import HeaderInterno from './HeaderInterno';
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 
 const Categorias = (props) => {
   return (
@@ -20,7 +20,7 @@ const Categorias = (props) => {
             {JSON.stringify(props.categorias)}
           </div>
           <div className="col-lg-8">
-          COnteudoooo
+            <Route path='/categorias/:urlCategoria' component={Categoria} />
           </div>
         </div>
       </div>

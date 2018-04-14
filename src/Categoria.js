@@ -45,7 +45,6 @@ class Categoria extends Component {
           return <AnuncioHome key={key} anuncio={anuncio} />
         })}
         </div>
-        <p>{JSON.stringify(this.state.anuncios)}</p>
       </div>
     );
   }

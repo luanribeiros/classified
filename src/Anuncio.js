@@ -18,10 +18,14 @@ class Anuncio extends Component {
 
   }
   render() {
+    const anuncio = this.state.anuncio
     return (
-      <h1> Anuncio </h1>,
+      <div>
+      <h1> {anuncio.nome} </h1>
+      <p> <img src={anuncio.foto} /></p>
       <p> {JSON.stringify(this.state.anuncio)} </p>
-    );
+      </div>
+    )
   }
 }
 

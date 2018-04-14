@@ -27,7 +27,7 @@ const Categorias = (props) => {
           <div className="col-lg-8">
             <Route path='/categorias/:urlCategoria' exact component={Categoria} />
             <Route path='/categorias/:urlCategoria/:idAnuncio'
-            render={(props) => <Anuncio {...props} />} />
+            render={(props) => <Anuncio { ...props} />} />
           </div>
         </div>
       </div>

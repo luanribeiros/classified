@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import AnuncioHome from './AnuncioHome'
 
 class Categoria extends Component {
   constructor(props) {
@@ -38,6 +39,10 @@ class Categoria extends Component {
           Categoria:
           {JSON.stringify(this.props.match.params.urlCategoria)}
         </h1>
+        { Object.keys(this.state.anuncios).map(key => {
+          const anuncio = this.state.anuncios[key];
+          return <AnuncioHome anuncio={anuncio} />
+        })}
         <p>{JSON.stringify(this.state.anuncios)}</p>
       </div>
     );

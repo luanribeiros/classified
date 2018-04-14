@@ -9,7 +9,12 @@ class Categoria extends Component {
       anuncios: {}
     }
 
-    const url = 'https://mercadodev-867c6.firebaseio.com/anuncios.json?orderBy=%22categoria%22&equalTo=%22esportes-e-lazer%22';
+    this.loadAnuncios = this.loadAnuncios.bind(this);
+    this.loadAnuncios();
+  }
+
+  loadAnuncios() {
+    const url = `https://mercadodev-867c6.firebaseio.com/anuncios.json?orderBy=%22categoria%22&equalTo=%22${this.props.match.params.urlCategoria}%22`;
     axios
       .get(url)
       .then( data => {

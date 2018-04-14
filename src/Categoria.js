@@ -42,7 +42,7 @@ class Categoria extends Component {
         <div className="row">
         { Object.keys(this.state.anuncios).map(key => {
           const anuncio = this.state.anuncios[key];
-          return <AnuncioHome key={key} anuncio={anuncio} />
+          return <AnuncioHome key={key} id={key} anuncio={anuncio} />
         })}
         </div>
       </div>

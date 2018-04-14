@@ -10,20 +10,25 @@ class Categoria extends Component {
     }
 
     this.loadAnuncios = this.loadAnuncios.bind(this);
-    this.loadAnuncios();
+    this.loadAnuncios(this.props.match.params.urlCategoria);
   }
 
-  loadAnuncios() {
-    const url = `https://mercadodev-867c6.firebaseio.com/anuncios.json?orderBy=%22categoria%22&equalTo=%22${this.props.match.params.urlCategoria}%22`;
+  loadAnuncios(urlCategoria) {
+    const url = `https://mercadodev-867c6.firebaseio.com/anuncios.json?orderBy=%22categoria%22&equalTo=%22${urlCategoria}%22`;
     axios
       .get(url)
       .then( data => {
-        this.setState({ anuncios: data.data })
+        this.setState({ anuncios: data.data });
+        this.categoria = urlCategoria;
       })
   }
 
   componentWillReceiveProps(newProps) {
-    console.log(newProps)
+    if(newProps.match.params.urlCategoria) {
+      if(this.categoria !== newProps.match.params.urlCategoria) {
+        this.loadAnuncios(newProps.match.params.urlCategoria)
+      }
+    }
   }
 
   render() {

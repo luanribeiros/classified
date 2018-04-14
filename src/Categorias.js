@@ -1,6 +1,7 @@
 import React from 'react'
-import HeaderInterno from './HeaderInterno';
 import { Link, Route } from 'react-router-dom'
+
+import HeaderInterno from './HeaderInterno';
 import Categoria from './Categoria'
 
 const Categorias = (props) => {

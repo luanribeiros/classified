@@ -22,6 +22,10 @@ class Categoria extends Component {
       })
   }
 
+  componentWillReceiveProps(newProps) {
+    console.log(newProps)
+  }
+
   render() {
     return (
       <div>

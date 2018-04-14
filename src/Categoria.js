@@ -39,10 +39,12 @@ class Categoria extends Component {
           Categoria:
           {JSON.stringify(this.props.match.params.urlCategoria)}
         </h1>
+        <div className="row">
         { Object.keys(this.state.anuncios).map(key => {
           const anuncio = this.state.anuncios[key];
-          return <AnuncioHome anuncio={anuncio} />
+          return <AnuncioHome key={key} anuncio={anuncio} />
         })}
+        </div>
         <p>{JSON.stringify(this.state.anuncios)}</p>
       </div>
     );

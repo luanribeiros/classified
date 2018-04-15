@@ -39,11 +39,14 @@ class Categoria extends Component {
           Categoria:
           {JSON.stringify(this.props.match.params.urlCategoria)}
         </h1>
+        {
+          Object.keys(this.state.anuncios).length === 0 && <p> Nenhum Produto Cadastrado </p>
+        }
         <div className="row">
-        { Object.keys(this.state.anuncios).map(key => {
-          const anuncio = this.state.anuncios[key];
-          return <AnuncioHome key={key} id={key} anuncio={anuncio} />
-        })}
+          { Object.keys(this.state.anuncios).map(key => {
+            const anuncio = this.state.anuncios[key];
+            return <AnuncioHome key={key} id={key} anuncio={anuncio} />
+          })}
         </div>
       </div>
     );

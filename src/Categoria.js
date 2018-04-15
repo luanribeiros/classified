@@ -7,7 +7,8 @@ class Categoria extends Component {
     super(props);
 
     this.state = {
-      anuncios: {}
+      anuncios: {},
+      isLoading: false
     }
 
     this.loadAnuncios = this.loadAnuncios.bind(this);
@@ -15,11 +16,12 @@ class Categoria extends Component {
   }
 
   loadAnuncios(urlCategoria) {
+    this.setState({ isLoading: true })
     const url = `https://mercadodev-867c6.firebaseio.com/anuncios.json?orderBy=%22categoria%22&equalTo=%22${urlCategoria}%22`;
     axios
       .get(url)
       .then( data => {
-        this.setState({ anuncios: data.data });
+        this.setState({ anuncios: data.data, isLoading: false });
         this.categoria = urlCategoria;
       })
   }
@@ -40,7 +42,10 @@ class Categoria extends Component {
           {JSON.stringify(this.props.match.params.urlCategoria)}
         </h1>
         {
-          Object.keys(this.state.anuncios).length === 0 && <p> Nenhum Produto Cadastrado </p>
+          this.state.isLoading && <i className="fa fa-circle-o-motch fa-spin fa-3x fa-fw"></i>
+        }
+        {
+          !this.state.isLoading && Object.keys(this.state.anuncios).length === 0 && <p> Nenhum Produto Cadastrado </p>
         }
         <div className="row">
           { Object.keys(this.state.anuncios).map(key => {

@@ -16,7 +16,10 @@ class Categoria extends Component {
   }
 
   loadAnuncios(urlCategoria) {
-    this.setState({ isLoading: true })
+    this.setState({
+      isLoading: true,
+      anuncios: {}
+    })
     const url = `https://mercadodev-867c6.firebaseio.com/anuncios.json?orderBy=%22categoria%22&equalTo=%22${urlCategoria}%22`;
     axios
       .get(url)

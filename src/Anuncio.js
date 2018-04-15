@@ -20,6 +20,11 @@ class Anuncio extends Component {
   }
   render() {
     const anuncio = this.state.anuncio
+
+    if(this.state.isLoading) {
+      return  <i className="fa fa-circle-o-motch fa-spin fa-3x fa-fw"></i>
+    }
+
     return (
       <div>
       <h1> {anuncio.nome} </h1>

@@ -41,8 +41,8 @@ class Categoria extends Component {
     return (
       <div>
         <h1>
-          Categoria:
-          {JSON.stringify(this.props.match.params.urlCategoria)}
+          Categoria: &nbsp;
+          {this.props.match.params.urlCategoria}
         </h1>
         {
           this.state.isLoading && <i className="fa fa-circle-o-motch fa-spin fa-3x fa-fw"></i>

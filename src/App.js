@@ -14,11 +14,13 @@ class App extends Component {
     this.state = {
       categorias: []
     }
+
     base.bindToState('categorias', {
       context: this,
       state: 'categorias'
     })
   }
+
   render() {
     return (
       <Router>

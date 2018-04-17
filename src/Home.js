@@ -4,7 +4,7 @@ import LinkCategoria from './LinkCategoria'
 import HeaderHome from './HeaderHome'
 import base from './base'
 
-class Home extends Component {
+export default class Home extends Component {
   constructor(props) {
     super(props);
 
@@ -46,5 +46,3 @@ class Home extends Component {
     )
   }
 }
-
-export default Home

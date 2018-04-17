@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-class Anuncio extends Component {
+export default class Anuncio extends Component {
   constructor(props) {
     super(props);
 
@@ -35,4 +35,3 @@ class Anuncio extends Component {
   }
 }
 
-export default Anuncio

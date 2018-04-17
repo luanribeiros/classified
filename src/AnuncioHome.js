@@ -1,8 +1,7 @@
 import React from  'react'
 import { Link } from 'react-router-dom'
 
-const AnuncioHome = ({id, anuncio}) => {
-  return (
+export default ({id, anuncio}) => (
     <div className="col-lg-4 col-md-6 mb-4">
       <div className="card h-100">
         <Link to={`/categorias/${anuncio.categoria}/${id}`}>
@@ -18,6 +17,5 @@ const AnuncioHome = ({id, anuncio}) => {
       </div>
     </div>
   );
-}
 
-export default AnuncioHome
+

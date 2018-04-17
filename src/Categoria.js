@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import AnuncioHome from './AnuncioHome'
 
-class Categoria extends Component {
+export default class Categoria extends Component {
   constructor(props) {
     super(props);
 
@@ -60,4 +60,4 @@ class Categoria extends Component {
     );
   }
 }
-export default Categoria
+

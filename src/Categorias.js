@@ -5,8 +5,7 @@ import HeaderInterno from './HeaderInterno';
 import Categoria from './Categoria'
 import Anuncio from './Anuncio'
 
-const Categorias = (props) => {
-  return (
+export default props => (
     <div>
       <HeaderInterno />
       <div className='container' style={{paddingTop: '120px'}}>
@@ -33,6 +32,4 @@ const Categorias = (props) => {
       </div>
     </div>
   );
-}
 
-export default Categorias

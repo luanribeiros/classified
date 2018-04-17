@@ -2,8 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import logo2 from './logo2.png'
 
-const HeaderInterno = (props) => {
-  return (
+export default props => (
     <nav className="navbar navbar-dark fixed-top bg-dark">
       <div className="container">
         <Link className="navbar-brand" to="/"><img alt="MercadoDev" src={logo2} height={80} /></Link>
@@ -19,7 +18,5 @@ const HeaderInterno = (props) => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
 
-export default HeaderInterno
